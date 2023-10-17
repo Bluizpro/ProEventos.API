@@ -1,13 +1,42 @@
-<h1>Eventos </h1>
+<h2>Eventos </h2>
+<hr>
 
-
-<div *ngFor="let eventos of eventos">
-    <p><b>Id Usuario</b> {{eventos.eventoId}}</p>
-    <p><b>Tema:</b> {{eventos.tema}}</p>
-    <p><b>Data Evento:</b> {{eventos.dataEvento}}</p>
-    <p><b>Tema:</b> {{eventos.qtdPessoas}}</p>
-    <p><b>Local</b> {{eventos.local}}</p>
-    <p><b>Imagem</b> {{eventos.imagemURL}}</p>
-    <p><b>Lote</b> {{eventos.lote}}</p>
-    <hr>
-</div>
+<form action="" class="form-inline">
+    <div class="form-group mb-2">
+        <input type="text" class="form-control mr2" placeholder="busca">
+   <button class="btn btn-outline-succes">Pesquisar</button>
+    </div>
+</form>
+<table class="table table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th>#</th>
+            <th>Imagem</th>
+            <th>Tema</th>
+            <th>Local</th>
+            <th>Data</th>
+            <th>Qtd Pessoas</th>
+            <th>Lote</th>
+            <th>Opções</th>
+        </tr>
+    </thead>
+    <tbody *ngIf="eventos && eventos.length">
+        <tr *ngFor="let eventos of eventos">            
+            <td>{{eventos.eventoId}}</td>
+            <td>{{eventos.imagemURL}}</td>
+            <td>{{eventos.tema}}</td>
+            <td>{{eventos.local}}</td>
+            <td>{{eventos.dataEvento}}</td>
+            <td>{{eventos.qtdPessoas}}</td>
+            <td>{{eventos.lote}}</td>
+            <td></td>
+        </tr>
+    </tbody>
+    <tfoot *ngIf="!eventos.length">
+        <tr>
+            <td colspan="8" class="text-center">
+                <h4>Nenhum  Evento encontrado</h4>
+            </td>
+        </tr>
+    </tfoot>
+</table>
