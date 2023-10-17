@@ -1,17 +1,26 @@
 <h2>Eventos </h2>
 <hr>
 
-<form action="" class="form-inline">
+<div  class="form-inline">
+    <label class="mr-2">Filtro</label>
     <div class="form-group mb-2">
-        <input type="text" class="form-control mr2" placeholder="busca">
-   <button class="btn btn-outline-succes">Pesquisar</button>
+        
+        <input type="text" class="form-control mr2" placeholder="busca"
+        [(ngModel)]="filtroLista"        >
+       
     </div>
-</form>
+</div>
+
 <table class="table table-striped">
     <thead class="thead-dark">
         <tr>
+            <th>
+                <button  class="btn btn-outline-light btn-sn" 
+                (click)="alterarImagem()">                   
+               {{!exibirImagem ? 'Exibir': 'Ocultar' }}
+            </button>
+        </th>
             <th>#</th>
-            <th>Imagem</th>
             <th>Tema</th>
             <th>Local</th>
             <th>Data</th>
@@ -21,15 +30,25 @@
         </tr>
     </thead>
     <tbody *ngIf="eventos && eventos.length">
-        <tr *ngFor="let eventos of eventos">            
+        <tr *ngFor="let eventos of eventosFiltrados">            
+            <td>
+                <img [collapse]="!exibirImagem" 
+                [isAnimated]="true"
+                 src="/assets/{{eventos.imagemURL}}"
+                [style.width.px]="widthImg"
+                [style.margin.px]="marginImg"
+                >
+            </td>
             <td>{{eventos.eventoId}}</td>
-            <td>{{eventos.imagemURL}}</td>
             <td>{{eventos.tema}}</td>
             <td>{{eventos.local}}</td>
             <td>{{eventos.dataEvento}}</td>
             <td>{{eventos.qtdPessoas}}</td>
             <td>{{eventos.lote}}</td>
-            <td></td>
+            <td>
+                <button type="button" class="btn btn-primary btn-sm mr-2">Editar</button>
+                <button type="button" class="btn btn-outline-danger btn-sm">Excluir</button>
+            </td>
         </tr>
     </tbody>
     <tfoot *ngIf="!eventos.length">
