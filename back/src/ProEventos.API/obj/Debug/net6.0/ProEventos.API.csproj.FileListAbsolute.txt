@@ -73,3 +73,9 @@ C:\Users\Familia Perez\Documents\curso angular\pro-eventos\back\src\ProEventos.A
 C:\Users\Familia Perez\Documents\curso angular\pro-eventos\back\src\ProEventos.API\bin\Debug\net6.0\runtimes\win-arm64\native\e_sqlite3.dll
 C:\Users\Familia Perez\Documents\curso angular\pro-eventos\back\src\ProEventos.API\bin\Debug\net6.0\runtimes\win-x64\native\e_sqlite3.dll
 C:\Users\Familia Perez\Documents\curso angular\pro-eventos\back\src\ProEventos.API\bin\Debug\net6.0\runtimes\win-x86\native\e_sqlite3.dll
+C:\Users\Familia Perez\Documents\curso angular\pro-eventos\back\src\ProEventos.Api\bin\Debug\net6.0\ProEventos.Application.dll
+C:\Users\Familia Perez\Documents\curso angular\pro-eventos\back\src\ProEventos.Api\bin\Debug\net6.0\ProEventos.Domain.dll
+C:\Users\Familia Perez\Documents\curso angular\pro-eventos\back\src\ProEventos.Api\bin\Debug\net6.0\ProEventos.Persistence.dll
+C:\Users\Familia Perez\Documents\curso angular\pro-eventos\back\src\ProEventos.Api\bin\Debug\net6.0\ProEventos.Application.pdb
+C:\Users\Familia Perez\Documents\curso angular\pro-eventos\back\src\ProEventos.Api\bin\Debug\net6.0\ProEventos.Domain.pdb
+C:\Users\Familia Perez\Documents\curso angular\pro-eventos\back\src\ProEventos.Api\bin\Debug\net6.0\ProEventos.Persistence.pdb
