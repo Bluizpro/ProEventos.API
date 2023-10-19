@@ -4,14 +4,14 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using ProEventos.Persistence;
+using ProEventos.Persistence.Contextos;
 
 #nullable disable
 
 namespace ProEventos.Persistence.Migrations
 {
     [DbContext(typeof(ProEventosContext))]
-    [Migration("20231018005259_Initial")]
+    [Migration("20231019020302_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -26,7 +26,7 @@ namespace ProEventos.Persistence.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<DateTime?>("DataEvento")
+                    b.Property<DateTime>("DataEvento")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Email")
@@ -34,18 +34,16 @@ namespace ProEventos.Persistence.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("ImagemURL")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Local")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("QtdPessoas")
+                    b.Property<int?>("QtdPessoas")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Telefone")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Tema")
@@ -73,7 +71,6 @@ namespace ProEventos.Persistence.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Nome")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<decimal>("Preco")
@@ -96,23 +93,18 @@ namespace ProEventos.Persistence.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Email")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("ImagemURL")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("MiniCurriculo")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Nome")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Telefone")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
@@ -135,7 +127,7 @@ namespace ProEventos.Persistence.Migrations
                     b.ToTable("PalestrantesEventos");
                 });
 
-            modelBuilder.Entity("ProEventos.Domain.RedeSocial", b =>
+            modelBuilder.Entity("ProEventos.Domain.RedesSocial", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -145,14 +137,12 @@ namespace ProEventos.Persistence.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Nome")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<int?>("PalestranteId")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("URL")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
@@ -166,9 +156,12 @@ namespace ProEventos.Persistence.Migrations
 
             modelBuilder.Entity("ProEventos.Domain.Lote", b =>
                 {
-                    b.HasOne("ProEventos.Domain.Evento", null)
+                    b.HasOne("ProEventos.Domain.Evento", "Evento")
                         .WithMany("Lotes")
-                        .HasForeignKey("EventoId");
+                        .HasForeignKey("EventoId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.Navigation("Evento");
                 });
 
             modelBuilder.Entity("ProEventos.Domain.PalestranteEvento", b =>
@@ -190,15 +183,21 @@ namespace ProEventos.Persistence.Migrations
                     b.Navigation("Palestrante");
                 });
 
-            modelBuilder.Entity("ProEventos.Domain.RedeSocial", b =>
+            modelBuilder.Entity("ProEventos.Domain.RedesSocial", b =>
                 {
-                    b.HasOne("ProEventos.Domain.Evento", null)
-                        .WithMany("RedeSocial")
-                        .HasForeignKey("EventoId");
+                    b.HasOne("ProEventos.Domain.Evento", "Evento")
+                        .WithMany("RedesSociais")
+                        .HasForeignKey("EventoId")
+                        .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("ProEventos.Domain.Palestrante", null)
-                        .WithMany("RedeSocial")
-                        .HasForeignKey("PalestranteId");
+                    b.HasOne("ProEventos.Domain.Palestrante", "Palestrante")
+                        .WithMany("RedesSociais")
+                        .HasForeignKey("PalestranteId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.Navigation("Evento");
+
+                    b.Navigation("Palestrante");
                 });
 
             modelBuilder.Entity("ProEventos.Domain.Evento", b =>
@@ -207,14 +206,14 @@ namespace ProEventos.Persistence.Migrations
 
                     b.Navigation("PalestrantesEventos");
 
-                    b.Navigation("RedeSocial");
+                    b.Navigation("RedesSociais");
                 });
 
             modelBuilder.Entity("ProEventos.Domain.Palestrante", b =>
                 {
                     b.Navigation("PalestrantesEventos");
 
-                    b.Navigation("RedeSocial");
+                    b.Navigation("RedesSociais");
                 });
 #pragma warning restore 612, 618
         }

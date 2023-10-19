@@ -5,15 +5,15 @@ using System.Threading.Tasks;
 
 namespace ProEventos.Domain
 {
-    public class RedeSocial
+    public class RedesSocial
     {
         public int Id { get; set; }
-        public string Nome { get; set; }
-        public string URL { get; set; }
+        public string? Nome { get; set; }
+        public string? URL { get; set; }
         public int? EventoId { get; set; }
-        public Evento Evento { get; }
+        public Evento? Evento { get; }
         public int? PalestranteId { get; set; }
-        public Palestrante Palestrante { get; }
+        public Palestrante? Palestrante { get; }
         
     }
 }
