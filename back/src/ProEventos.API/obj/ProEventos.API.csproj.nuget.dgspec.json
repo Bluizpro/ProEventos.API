@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Familia Perez\\Documents\\curso angular\\pro-eventos\\back\\src\\ProEventos.API\\ProEventos.API.csproj": {}
+    "C:\\Users\\Familia Perez\\Documents\\curso angular\\pro-eventos\\back\\src\\ProEventos.Api\\ProEventos.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Familia Perez\\Documents\\curso angular\\pro-eventos\\back\\src\\ProEventos.API\\ProEventos.API.csproj": {
+    "C:\\Users\\Familia Perez\\Documents\\curso angular\\pro-eventos\\back\\src\\ProEventos.Api\\ProEventos.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Familia Perez\\Documents\\curso angular\\pro-eventos\\back\\src\\ProEventos.API\\ProEventos.API.csproj",
+        "projectUniqueName": "C:\\Users\\Familia Perez\\Documents\\curso angular\\pro-eventos\\back\\src\\ProEventos.Api\\ProEventos.API.csproj",
         "projectName": "ProEventos.API",
-        "projectPath": "C:\\Users\\Familia Perez\\Documents\\curso angular\\pro-eventos\\back\\src\\ProEventos.API\\ProEventos.API.csproj",
+        "projectPath": "C:\\Users\\Familia Perez\\Documents\\curso angular\\pro-eventos\\back\\src\\ProEventos.Api\\ProEventos.API.csproj",
         "packagesPath": "C:\\Users\\Familia Perez\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Familia Perez\\Documents\\curso angular\\pro-eventos\\back\\src\\ProEventos.API\\obj\\",
+        "outputPath": "C:\\Users\\Familia Perez\\Documents\\curso angular\\pro-eventos\\back\\src\\ProEventos.Api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Familia Perez\\AppData\\Roaming\\NuGet\\NuGet.Config"
