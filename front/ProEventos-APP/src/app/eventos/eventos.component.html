@@ -47,10 +47,10 @@
             <td>{{eventos.qtdPessoas}}</td>
             <td>{{eventos.lotes[0].nome}}</td>
             <td>
-                <button type="button" class="btn btn-primary btn-sm mr-2">
+                <button type="button" class="btn btn-primary btn-sm mr-2" tooltip="edit">
                     <i class="fa fa-edit"></i>
                    </button>
-                <button type="button" class="btn btn-outline-danger btn-sm">
+                <button type="button" class="btn btn-outline-danger btn-sm" tooltip="excluir" (click)="openModal(template)">
                     <i class="fa fa-trash"></i>
                   </button>
             </td>
@@ -64,3 +64,11 @@
         </tr>
     </tfoot>
 </table>
+
+<ng-template #template>
+  <div class="modal-body text-center">
+    <p>Tem certeza que quer deletar este Evento?</p>
+    <button type="button" class="btn btn-default" (click)="confirm()" >Sim</button>
+    <button type="button" class="btn btn-primary" (click)="decline()" >Não</button>
+  </div>
+</ng-template>
