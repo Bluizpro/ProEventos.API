@@ -10,14 +10,12 @@ export class TituloComponent implements OnInit{
  @Input() titulo!:  string;
  @Input() iconClass = 'fa fa-user'
  @Input() subtitulo = 'Desde 2023'
- @Input()botaoLista = false;
+ @Input()botaoLista = true;
 
 
   constructor(private router: Router){}
 
   ngOnInit(): void { }
 
-  listar(): void{
-    this.router.navigate([`/${this.titulo.toLocaleLowerCase()}/evento/lista`])
-  }
+ 
 }
