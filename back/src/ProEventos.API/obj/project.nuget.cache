@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "XXRb/EHXtZJRZj71OJwGrQIXTQ74WkWnzrVUd1K87Q3wX1tg6xl+FZSdmaxmzWaXYTeIwuM3hOUwwOBrZVGjeA==",
+  "dgSpecHash": "3Q14JdHzAaQrg0UVVFU0l/yRtxJtPPzvxLhzHDGyrgbHrRUzBf13IiVbGYJqJaRpt8pckkcos9VvxmfjSQsb5Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\Familia Perez\\Documents\\curso angular\\pro-eventos\\back\\src\\ProEventos.Api\\ProEventos.API.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Familia Perez\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\Familia Perez\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\Familia Perez\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Familia Perez\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\6.0.0\\microsoft.aspnetcore.jsonpatch.6.0.0.nupkg.sha512",
     "C:\\Users\\Familia Perez\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\6.0.0\\microsoft.aspnetcore.mvc.newtonsoftjson.6.0.0.nupkg.sha512",

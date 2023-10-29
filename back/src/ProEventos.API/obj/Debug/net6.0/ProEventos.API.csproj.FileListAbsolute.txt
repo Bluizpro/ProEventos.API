@@ -83,3 +83,5 @@ C:\Users\Familia Perez\Documents\curso angular\pro-eventos\back\src\ProEventos.A
 C:\Users\Familia Perez\Documents\curso angular\pro-eventos\back\src\ProEventos.API\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\Familia Perez\Documents\curso angular\pro-eventos\back\src\ProEventos.API\bin\Debug\net6.0\Newtonsoft.Json.dll
 C:\Users\Familia Perez\Documents\curso angular\pro-eventos\back\src\ProEventos.API\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+C:\Users\Familia Perez\Documents\curso angular\pro-eventos\back\src\ProEventos.API\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\Familia Perez\Documents\curso angular\pro-eventos\back\src\ProEventos.API\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

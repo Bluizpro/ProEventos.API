@@ -4,6 +4,9 @@ using ProEventos.Domain;
 using ProEventos.Persistence.Contextos;
 using ProEventos.Application.Contratos;
 
+using ProEventos.Application.Dto;
+
+
 namespace ProEventos.API.Controllers;
 
 [ApiController]
@@ -23,7 +26,10 @@ public class EventosController : ControllerBase
         try
         {
             var eventos =await _eventoService.GetAllEventosAsync(true);
-            if (eventos ==null)return NotFound("Nenhum evento encontrado");
+            if (eventos ==null)return NoContent();
+           
+           
+
             return Ok(eventos);
         }
         catch (Exception ex)
@@ -41,7 +47,7 @@ public class EventosController : ControllerBase
         try
         {
             var evento =await _eventoService.GetEventoByIdAsync(id, true);
-            if (evento ==null)return NotFound("Nenhum evento encontrado");
+            if (evento ==null)return NoContent();
             return Ok(evento);
         }
         catch (Exception ex)
@@ -59,7 +65,7 @@ public class EventosController : ControllerBase
         try
         {
             var evento =await _eventoService.GetAllEventosByTemaAsync(tema, true);
-            if (evento ==null)return NotFound("Nenhum Tema encontrado");
+            if (evento ==null)return NoContent();
             return Ok(evento);
         }
         catch (Exception ex)
@@ -72,12 +78,12 @@ public class EventosController : ControllerBase
     }
     [HttpPost]
 
-    public async Task <IActionResult> Post(Evento model)
+    public async Task <IActionResult> Post(EventoDto model)
     {
         try
         {
             var evento =await _eventoService.AddEventos(model);
-            if (evento == null)return BadRequest("Erro ao tentar adicionar evento");
+            if (evento == null)return NoContent();
             return Ok(evento);
         }
         catch (Exception ex)
@@ -88,12 +94,12 @@ public class EventosController : ControllerBase
     }
     [HttpPut("{id}")]
 
-    public async Task <IActionResult> Put(int id,Evento model)
+    public async Task <IActionResult> Put(int id,EventoDto model)
     {
         try
         {
             var evento =await _eventoService.UpdateEventos(id,model);
-            if (evento == null)return BadRequest("Erro ao tentar atualizar evento");
+            if (evento == null)return NoContent();
             return Ok(evento);
         }
         catch (Exception ex)
