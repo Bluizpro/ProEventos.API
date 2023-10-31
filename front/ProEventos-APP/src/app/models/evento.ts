@@ -1,3 +1,4 @@
+import { DateTimeFormatPipe } from "@pp/helpers/date-time-format.pipe";
 import { Lote } from "./lote";
 import { Palestrante } from "./palestrante";
 import { RedesSocial } from "./redes-social";

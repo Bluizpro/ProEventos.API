@@ -25,7 +25,12 @@ import { EventoDetalheComponent } from './componentes/eventos/evento-detalhe/eve
 import { EventoListaComponent } from './componentes/eventos/evento-lista/evento-lista.component';
 import { UserComponent } from './componentes/user/user.component';
 import { LoginComponent } from './componentes/user/login/login.component';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { RegistrationComponent } from './componentes/user/registration/registration.component';
+import { defineLocale } from 'ngx-bootstrap/chronos';
+import { ptBrLocale } from 'ngx-bootstrap/locale';
+
+defineLocale('pt-br', ptBrLocale);
 
 @NgModule({
   declarations: [
@@ -50,9 +55,10 @@ import { RegistrationComponent } from './componentes/user/registration/registrat
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    BsDatepickerModule.forRoot(),
     CollapseModule.forRoot(),
     FormsModule,
-    NgxSpinnerModule,
+    NgxSpinnerModule,    
     BsDropdownModule.forRoot(),
     TooltipModule.forRoot(),
     ModalModule.forRoot(),

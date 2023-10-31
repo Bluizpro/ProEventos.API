@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.VisualBasic;
 
 namespace ProEventos.Application.Dto
 {
@@ -10,7 +11,7 @@ namespace ProEventos.Application.Dto
     {
         public int Id { get; set; }
         public string? Local { get; set; }
-        public string? DataEvento { get; set; }
+        public DateTime DataEvento { get; set; }
 
         [Required(ErrorMessage = "O {0} e Obrigatorio"),StringLength(50, MinimumLength = 4, ErrorMessage ="Intervalo permitido e de 4 a 50 caracteres.")]
         

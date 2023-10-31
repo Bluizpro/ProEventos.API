@@ -110,19 +110,25 @@ public class EventosController : ControllerBase
     }
     [HttpDelete("{id}")]
 
-    public async Task <IActionResult> Delete(int id)
-    {
-        try
+   public async Task<IActionResult> Delete(int id)
         {
-            if( await _eventoService.DeleteEventos(id))   
-             return Ok("Evento deletado");
-            else
-             return BadRequest("Evento não deletado");                  
+            try
+            {
+                var evento = await _eventoService.GetEventoByIdAsync(id, true);
+                if (evento == null) return NoContent();
+
+                return await _eventoService.DeleteEventos(id)
+                ? Ok(new { message = "Deletado" })            
+                 
+                 : throw new Exception("Ocorreu um problem não específico ao tentar deletar Evento.");
+                
+            }
+            catch (Exception ex)
+            {
+                return this.StatusCode(StatusCodes.Status500InternalServerError,
+                    $"Erro ao tentar deletar eventos. Erro: {ex.Message}");
+            }
         }
-        catch (Exception ex)
-        {
-            return this.StatusCode(StatusCodes.Status500InternalServerError,
-            $"Erro ao tentar deletar evento. Erro: {ex.Message}");
-        }
-    }
 }
+
+    

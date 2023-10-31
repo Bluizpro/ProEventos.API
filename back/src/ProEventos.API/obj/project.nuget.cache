@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3Q14JdHzAaQrg0UVVFU0l/yRtxJtPPzvxLhzHDGyrgbHrRUzBf13IiVbGYJqJaRpt8pckkcos9VvxmfjSQsb5Q==",
+  "dgSpecHash": "hB8iajk/1ynk+AozMC0hK1uvs6Pv1dRuFu7mSuA10jWACKfNPXqjcl7fi4Wao2EM7mncaKPWbMn7vn/3ctca/g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Familia Perez\\Documents\\curso angular\\pro-eventos\\back\\src\\ProEventos.Api\\ProEventos.API.csproj",
+  "projectFilePath": "C:\\Users\\Familia Perez\\Documents\\curso angular\\pro-eventos\\back\\src\\ProEventos.API\\ProEventos.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Familia Perez\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\Familia Perez\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
