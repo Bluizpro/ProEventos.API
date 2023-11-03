@@ -15,7 +15,7 @@ import { ToastrService } from 'ngx-toastr';
 export class EventoDetalheComponent implements OnInit {
   form!: FormGroup;
   evento = {} as Evento;
-  modoSalvar = 'post'; 
+  modoSalvar = 'post';
   get f(): any {
     return this.form.controls;
   }
@@ -64,6 +64,7 @@ export class EventoDetalheComponent implements OnInit {
       lotes: this.fb.array([]),
     });
   }
+  
   public resetForm(): void {
     this.form.reset();
   }
@@ -77,7 +78,7 @@ export class EventoDetalheComponent implements OnInit {
     const eventoIdParam = this.router.snapshot.paramMap.get('id');
     if (eventoIdParam !== null) {
       this.spinner.show();
-      this.modoSalvar = 'put'; 
+      this.modoSalvar = 'put';
       this.eventoService.getEventoById(+eventoIdParam).subscribe(
         {
           next: (evento: Evento) => {
@@ -93,34 +94,24 @@ export class EventoDetalheComponent implements OnInit {
         });
     }
   }
-  public salvarAlteracao() {
+  
+  public salvarAlteracao(): void {
     this.spinner.show();
-    if(this.form.valid){
-          if(this.modoSalvar === 'post'){
-        this.evento = {...this.form.value}
-        this.eventoService.postEvento(this.evento).subscribe(
-          () => this.toastr.success('Evento salvo com sucesso!', 'Sucessor'),
-          (error: any) =>{
-            console.error(error);
-            this.spinner.hide();
-            this.toastr.error('Error ao salvar evento', 'Error')
-          },
-          () => this.spinner.hide()      
-        );
-      }else{
-        this.evento = {id: this.evento.id, ...this.form.value}
-        this.eventoService.putEvento(this.evento.id, this.evento).subscribe(
-          () => this.toastr.success('Evento salvo com sucesso!', 'Sucessor'),
-          (error: any) =>{
-            console.error(error);
-            this.spinner.hide();
-            this.toastr.error('Error ao salvar evento', 'Error')
-          },
-          () => this.spinner.hide()
-        );
-      }   
-      
+    if (this.form.valid) {
+      this.evento = this.modoSalvar === 'post'
+        ? { ...this.form.value }
+        : { id: this.evento.id, ...this.form.value}; 
+      this.eventoService [this.modoSalvar](this.evento).subscribe(
+        () => this.toastr.success('Evento salvo com sucesso!', 'Sucessor'),
+        (error: any) => {
+          console.error(error);
+          this.spinner.hide();
+          this.toastr.error('Error ao salvar evento', 'Error')
+        },
+        () => this.spinner.hide()
+      );
+     
     }
   }
-
 }
+
