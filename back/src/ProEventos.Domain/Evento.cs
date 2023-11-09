@@ -19,7 +19,7 @@ namespace ProEventos.Domain
         public string? ImagemURL { get; set; }
         public string? Telefone { get; set; }
         public string? Email { get; set; }
-        public IEnumerable<Lote>? Lotes { get; set; }
+        public IEnumerable<Lote> Lotes { get; set; }
         public IEnumerable<RedesSocial>? RedesSociais { get; set; }
         public IEnumerable<PalestranteEvento>? PalestrantesEventos { get; set; }
         

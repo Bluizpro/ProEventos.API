@@ -7,8 +7,9 @@ using Microsoft.VisualBasic;
 
 namespace ProEventos.Application.Dto
 {
-    public class EventoDto
-    {
+
+  public class EventoDto
+    { 
         public int Id { get; set; }
         public string? Local { get; set; }
         public DateTime DataEvento { get; set; }

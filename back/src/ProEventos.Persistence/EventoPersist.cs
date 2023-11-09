@@ -6,11 +6,11 @@ using ProEventos.Persistence.Contratos;
 
 namespace ProEventos.Persistence
 {
-    public class EventosPersist : IEventosPersist
+    public class EventoPersist : IEventosPersist
     {
         private readonly ProEventosContext _context;
       
-        public EventosPersist(ProEventosContext context)
+        public EventoPersist(ProEventosContext context)
         {
         _context = context;  
        // _context.ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;    

@@ -29,6 +29,9 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { RegistrationComponent } from './componentes/user/registration/registration.component';
 import { defineLocale } from 'ngx-bootstrap/chronos';
 import { ptBrLocale } from 'ngx-bootstrap/locale';
+import { EventoService } from './services/evento.service';
+import { LoteService } from './services/lote.service';
+import { NgxCurrencyDirective } from "ngx-currency";
 
 defineLocale('pt-br', ptBrLocale);
 
@@ -57,8 +60,9 @@ defineLocale('pt-br', ptBrLocale);
     BrowserAnimationsModule,
     BsDatepickerModule.forRoot(),
     CollapseModule.forRoot(),
-    FormsModule,
-    NgxSpinnerModule,    
+    FormsModule,    
+    NgxSpinnerModule,
+    NgxCurrencyDirective,      
     BsDropdownModule.forRoot(),
     TooltipModule.forRoot(),
     ModalModule.forRoot(),
@@ -70,7 +74,7 @@ defineLocale('pt-br', ptBrLocale);
     
 
   ],
-  providers: [],
+  providers: [EventoService, LoteService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
