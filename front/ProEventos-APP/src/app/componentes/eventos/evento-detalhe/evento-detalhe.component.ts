@@ -1,6 +1,7 @@
-import { Component, OnInit, TemplateRef } from '@angular/core';
+import { Component, EnvironmentInjector, OnInit, TemplateRef } from '@angular/core';
 import { AbstractControl, FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { environment } from '@environments/environment';
 import { Evento } from '@pp/models/evento';
 import { Lote } from '@pp/models/lote';
 import { EventoService } from '@pp/services/evento.service';
@@ -9,6 +10,7 @@ import { BsLocaleService } from 'ngx-bootstrap/datepicker';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
+
 
 @Component({
   selector: 'app-evento-detalhe',
@@ -22,6 +24,8 @@ export class EventoDetalheComponent implements OnInit {
   estadoSalvar = 'post';
   eventoId!: number;
   loteAtual = {id: 0, nome: '', indice: 0}
+  imagemURL = 'assets/img/upload.png';
+  file: File;
 
 
 
@@ -55,6 +59,7 @@ export class EventoDetalheComponent implements OnInit {
     private spinner: NgxSpinnerService,
     private toastr: ToastrService,
     private router: Router,
+
     private modalService: BsModalService,
     private loteService: LoteService) {
 
@@ -80,7 +85,7 @@ export class EventoDetalheComponent implements OnInit {
       qtdPessoas: ['', [Validators.required, Validators.max(120000)]],
       telefone: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      imagemURL: ['', Validators.required],
+      imagemURL: [''],
       lotes: this.fb.array([]),
     });
   }
@@ -117,6 +122,9 @@ export class EventoDetalheComponent implements OnInit {
         (evento: Evento) => {
           this.evento = { ...evento };
           this.form.patchValue(this.evento);
+          if (this.evento.imagemURL !== '') {
+            this.imagemURL = environment.apiURL + 'resources/images/' + this.evento.imagemURL;
+          }
           this.carregarLotes();
         },
         (error: any) => {
@@ -191,7 +199,7 @@ lotesRetorno.forEach(lote =>{
 
     this.modalRef = this.modalService.show(template, { class: 'modal-sm' });
   }
-  confirmDelete(): void{
+  confirmDeleteLote(): void{
     this.modalRef.hide();
     this.spinner.show();
 
@@ -208,7 +216,7 @@ lotesRetorno.forEach(lote =>{
     ) .add(() => this.spinner.hide());
 
   }
-  declineDelete(): void{
+  declineDeleteLote(): void{
     this.modalRef.hide();
 
   }
@@ -216,6 +224,28 @@ lotesRetorno.forEach(lote =>{
  return nome == null || nome == '' ? 'Nome do Lote' : nome;
 
   }
+  onFileChange(ev: any): void{
+    const reader = new FileReader();
+    reader.onload = (event: any) => this.imagemURL = event.target.result;
 
+    this.file = ev.target.files;
+    reader.readAsDataURL(this.file[0]);
+
+    this.uploadImagen();
+  }
+  uploadImagen(): void{
+    this.spinner.show();
+    this.eventoService.postUpload(this.eventoId, this.file).subscribe(
+() => {
+  this.carregarEvento();
+  this.toastr.success('Imagem atualizada com Sucesso','Sucessos!')
+},
+(error: any) => {
+  this.toastr.error('Erro ao carregar imagem', 'Erro!')
+  console.error(error)
+}
+    )
+    .add(() => this.spinner.hide());
+  }
 }
 

@@ -21,3 +21,20 @@
     --default-height: 25px;
     top: var(--default-height);
   }
+  .card-evento-view {
+    position: sticky;
+    top: 10px;
+  }
+  .card-img-block{
+    img{
+      cursor: pointer;
+      border-radius: 3px 3px 0 0;
+      width: 100%;
+    }
+    .button-container {
+      text-align: right; // Alinhar o conteúdo à direita
+    }    
+    .button {
+      margin-left: 10px; // Ajuste a margem esquerda para mover o botão para a direita
+    }
+  }
