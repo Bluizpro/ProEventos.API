@@ -30,6 +30,8 @@ namespace ProEventos.Application.Dto
         [Display(Name = "e-mail")]
         [EmailAddress(ErrorMessage = "o campo {0} deve ser valido!")]
         public string? Email { get; set; }
+        public int UserId { get; set; }
+        public UserDto? UserDto { get; set; }
         public IEnumerable<LoteDto>? Lotes { get; set; }
         public IEnumerable<RedesSocialDto>? RedesSociais { get; set; }
         public IEnumerable<PalestranteDto>? PalestrantesEventos { get; set; }

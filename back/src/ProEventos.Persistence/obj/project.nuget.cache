@@ -1,10 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "NeQSKWI0nZKYo++LQiYlOidiX+LRUuGhF/71rlo1109E5/UWmt8++WxJpxTbpB6dI3nwm8DPWDu9gjoPnbg60A==",
+  "dgSpecHash": "iz5CKUEEZb4KAstKfKwg4bChK8FPD7QHHutyrClZbOGJzqDPhBpZUQvALOGb7q0y8CfjJy878cumauYWmfDzig==",
   "success": true,
   "projectFilePath": "C:\\Users\\Familia Perez\\Documents\\curso angular\\pro-eventos\\back\\src\\ProEventos.Persistence\\ProEventos.Persistence.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Familia Perez\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\Familia Perez\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.24\\microsoft.aspnetcore.cryptography.internal.6.0.24.nupkg.sha512",
+    "C:\\Users\\Familia Perez\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\6.0.24\\microsoft.aspnetcore.cryptography.keyderivation.6.0.24.nupkg.sha512",
+    "C:\\Users\\Familia Perez\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\6.0.24\\microsoft.aspnetcore.identity.entityframeworkcore.6.0.24.nupkg.sha512",
     "C:\\Users\\Familia Perez\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.24\\microsoft.entityframeworkcore.6.0.24.nupkg.sha512",
     "C:\\Users\\Familia Perez\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.24\\microsoft.entityframeworkcore.abstractions.6.0.24.nupkg.sha512",
     "C:\\Users\\Familia Perez\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\6.0.24\\microsoft.entityframeworkcore.analyzers.6.0.24.nupkg.sha512",
@@ -16,6 +19,8 @@
     "C:\\Users\\Familia Perez\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\Familia Perez\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\6.0.1\\microsoft.extensions.dependencyinjection.6.0.1.nupkg.sha512",
     "C:\\Users\\Familia Perez\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\Familia Perez\\.nuget\\packages\\microsoft.extensions.identity.core\\6.0.24\\microsoft.extensions.identity.core.6.0.24.nupkg.sha512",
+    "C:\\Users\\Familia Perez\\.nuget\\packages\\microsoft.extensions.identity.stores\\6.0.24\\microsoft.extensions.identity.stores.6.0.24.nupkg.sha512",
     "C:\\Users\\Familia Perez\\.nuget\\packages\\microsoft.extensions.logging\\6.0.0\\microsoft.extensions.logging.6.0.0.nupkg.sha512",
     "C:\\Users\\Familia Perez\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.0\\microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\Familia Perez\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
