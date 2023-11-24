@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EventosComponent } from './componentes/eventos/eventos.component';
 import { PalestrantesComponent } from './componentes/palestrantes/palestrantes.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavComponent } from './shared/nav/nav.component';
 
@@ -32,6 +32,9 @@ import { ptBrLocale } from 'ngx-bootstrap/locale';
 import { EventoService } from './services/evento.service';
 import { LoteService } from './services/lote.service';
 import { NgxCurrencyDirective } from "ngx-currency";
+import { AccountService } from './services/account.service';
+import { JwtInterceptor } from './interceptors/jwt.interceptor';
+import { HomeComponent } from './componentes/Home/Home.component';
 
 defineLocale('pt-br', ptBrLocale);
 
@@ -50,7 +53,8 @@ defineLocale('pt-br', ptBrLocale);
     EventoListaComponent,
     UserComponent,
     LoginComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -74,7 +78,10 @@ defineLocale('pt-br', ptBrLocale);
     
 
   ],
-  providers: [EventoService, LoteService],
+  providers: [EventoService,
+     LoteService,
+      AccountService,
+    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
