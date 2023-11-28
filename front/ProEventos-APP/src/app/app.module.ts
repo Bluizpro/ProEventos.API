@@ -35,6 +35,7 @@ import { NgxCurrencyDirective } from "ngx-currency";
 import { AccountService } from './services/account.service';
 import { JwtInterceptor } from './interceptors/jwt.interceptor';
 import { HomeComponent } from './componentes/Home/Home.component';
+import { PaginationModule } from 'ngx-bootstrap/pagination';
 
 defineLocale('pt-br', ptBrLocale);
 
@@ -70,6 +71,7 @@ defineLocale('pt-br', ptBrLocale);
     BsDropdownModule.forRoot(),
     TooltipModule.forRoot(),
     ModalModule.forRoot(),
+    PaginationModule.forRoot(),
     ToastrModule.forRoot({
       timeOut: 3000,
     positionClass: 'toast-bottom-right',

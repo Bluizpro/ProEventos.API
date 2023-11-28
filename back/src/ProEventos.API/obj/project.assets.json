@@ -3868,11 +3868,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Familia Perez\\Documents\\curso angular\\pro-eventos\\back\\src\\ProEventos.Api\\ProEventos.API.csproj",
+      "projectUniqueName": "C:\\Users\\Familia Perez\\Documents\\curso angular\\pro-eventos\\back\\src\\ProEventos.API\\ProEventos.API.csproj",
       "projectName": "ProEventos.API",
-      "projectPath": "C:\\Users\\Familia Perez\\Documents\\curso angular\\pro-eventos\\back\\src\\ProEventos.Api\\ProEventos.API.csproj",
+      "projectPath": "C:\\Users\\Familia Perez\\Documents\\curso angular\\pro-eventos\\back\\src\\ProEventos.API\\ProEventos.API.csproj",
       "packagesPath": "C:\\Users\\Familia Perez\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Familia Perez\\Documents\\curso angular\\pro-eventos\\back\\src\\ProEventos.Api\\obj\\",
+      "outputPath": "C:\\Users\\Familia Perez\\Documents\\curso angular\\pro-eventos\\back\\src\\ProEventos.API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Familia Perez\\AppData\\Roaming\\NuGet\\NuGet.Config"
