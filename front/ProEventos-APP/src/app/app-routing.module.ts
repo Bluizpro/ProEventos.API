@@ -47,7 +47,7 @@ const routes: Routes = [
     ]
   },
   {path: 'home', component: HomeComponent},
-  {path: '##', redirectTo: 'dashboard',pathMatch:'full'}
+  {path: '#', redirectTo: 'dashboard',pathMatch:'full'}
   
 ];
 

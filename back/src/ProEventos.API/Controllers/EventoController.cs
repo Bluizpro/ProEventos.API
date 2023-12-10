@@ -9,6 +9,7 @@ using ProEventos.Application.Dto;
 using ProEventos.API.Extensions;
 using Microsoft.AspNetCore.Authorization;
 using ProEventos.Persistence.models;
+using ProEventos.API.Helpers;
 
 
 namespace ProEventos.API.Controllers;
@@ -19,12 +20,14 @@ public class EventosController : ControllerBase
 {
     private readonly IEventoService _eventoService;
     private readonly IAccountService _accountService;
-    private readonly IWebHostEnvironment _hostEnvironment;
+    private readonly IUtil _util;
+
+    private readonly string _destino = "images";
 
     public EventosController(IEventoService eventoService,
-    IAccountService accountService, IWebHostEnvironment hostEnvironment )
+    IAccountService accountService, IUtil util )
     {
-    _hostEnvironment = hostEnvironment;
+    _util = util;
         _eventoService = eventoService;
         _accountService = accountService;
 
@@ -82,8 +85,8 @@ public class EventosController : ControllerBase
             var file = Request.Form.Files[0];
             if (file.Length > 0)
             {
-                 DeleteImage(evento.ImagemURL);
-                evento.ImagemURL = await SaveImage(file);
+                _util.DeleteImage(evento.ImagemURL, _destino);
+                evento.ImagemURL = await _util.SaveImage(file, _destino);
 
             }
             var EventoRetorno = await _eventoService.UpdateEventos(User.GetUserId(), eventoId, evento);
@@ -141,7 +144,7 @@ public class EventosController : ControllerBase
 
               if(await _eventoService.DeleteEventos(User.GetUserId(), id)) 
               {
-                DeleteImage(evento.ImagemURL);
+               _util.DeleteImage(evento.ImagemURL, _destino);
               return Ok(new { message = "Deletado" });  
 
               }
@@ -161,25 +164,7 @@ public class EventosController : ControllerBase
             }
             
         }
-         [NonAction]
-        public async Task<string> SaveImage(IFormFile imageFile)
-        {
-            string imageName = new string(Path.GetFileNameWithoutExtension(imageFile.FileName).Take(10).ToArray()).Replace(' ','-');
-
-            imageName = $"{imageName}{DateTime.UtcNow.ToString("yymmssfff")}{Path.GetExtension(imageFile.FileName)}";
-            var imagePath = Path.Combine(_hostEnvironment.ContentRootPath, @"Resources/images", imageName);
-            using(var fileStream = new FileStream(imagePath, FileMode.Create)){
-                await imageFile.CopyToAsync(fileStream);
-            }
-           return imageName;
-        }
-        [NonAction]
-        public void DeleteImage(string imageName)
-        {
-            var imagePath = Path.Combine(_hostEnvironment.ContentRootPath, @"Resources/images", imageName);
-            if(System.IO.File.Exists(imagePath))
-            System.IO.File.Delete(imagePath);
-        }
+         
 
         
 }

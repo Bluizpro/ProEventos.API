@@ -36,7 +36,7 @@ export class AccountService {
   logout(): void{
     localStorage.removeItem('user');
     this.currentUserSource.next(null);
-    this.currentUserSource.complete();
+    
   }
   public register(model: any): Observable<void> {
     return this.http.post<User>(this.baseUrl + 'register', model).pipe(
@@ -63,6 +63,15 @@ export class AccountService {
         }
       )
     )
+  }
+  postUpload(file: File): Observable<UserUpdate> {
+    const fileToUpload = file[0] as File;
+    const formData = new FormData();
+    formData.append('file', fileToUpload);
+
+    return this.http
+      .post<UserUpdate>(`${this.baseUrl}upload-image`, formData)
+      .pipe(take(1));
   }
   }
 
