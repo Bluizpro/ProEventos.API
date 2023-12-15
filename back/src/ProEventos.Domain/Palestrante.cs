@@ -13,7 +13,7 @@ namespace ProEventos.Domain
         public int UserId { get; set; }
         public User User { get; set; }
         public IEnumerable<RedesSocial>? RedesSociais { get; set; }
-        public IEnumerable<PalestranteEvento>? PalestrantesEventos { get; set; }
+        public IEnumerable<PalestranteEvento> PalestrantesEventos { get; set; }
 
     }
 }

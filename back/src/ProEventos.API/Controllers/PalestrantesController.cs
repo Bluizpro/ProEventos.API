@@ -16,7 +16,7 @@ namespace ProEventos.API.Controllers;
 [Authorize]
 [ApiController]
 [Route("api/[controller]")]
-public class PalestantesController : ControllerBase
+public class PalestrantesController : ControllerBase
 {
     private readonly IPalestranteService _palestranteService;
 
@@ -25,7 +25,7 @@ public class PalestantesController : ControllerBase
 
     private readonly string _destino = "images";
 
-    public  PalestantesController(IPalestranteService palestranteService,
+    public  PalestrantesController(IPalestranteService palestranteService,
     IAccountService accountService, IUtil util )
     {
     _util = util;

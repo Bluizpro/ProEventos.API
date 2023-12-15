@@ -18,7 +18,6 @@ import { EventoService } from 'src/app/services/evento.service';
 export class EventoListaComponent implements OnInit {
   modalRef!: BsModalRef;
   public eventos: Evento[] = [];
-
   public eventoId!: number
   widthImg: number = 150;
   marginImg: number = 2;
