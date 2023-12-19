@@ -24,7 +24,7 @@ const routes: Routes = [
     children:[
       {path: 'user', redirectTo: 'user/perfil'}, 
       {path: 'user/perfil', component: PerfilComponent},
-      {path: 'evento', redirectTo: 'evento/lista'},
+      {path: 'evento', redirectTo: 'lista'},
       {path: 'evento', component: EventosComponent,
       children: [
         { path: 'detalhe/:id', component: EventoDetalheComponent },

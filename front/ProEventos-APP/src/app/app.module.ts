@@ -76,6 +76,7 @@ defineLocale('pt-br', ptBrLocale);
     CollapseModule.forRoot(),
     FormsModule,    
     NgxSpinnerModule,
+    
     NgxCurrencyDirective,      
     BsDropdownModule.forRoot(),
     TooltipModule.forRoot(),
