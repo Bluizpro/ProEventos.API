@@ -1,3 +1,34 @@
+Bem-vindo ao nosso Projeto de Gerenciamento de Eventos aprimorado! Desenvolvido com Angular e DotNet 6, essa solução moderna agora inclui recursos de Banco de Dados e Login, proporcionando uma experiência completa.
+
+Destaques Atualizados:
+
+Integração Poderosa:
+Utilizando Angular e DotNet 6, nosso projeto agora incorpora funcionalidades avançadas de Banco de Dados e Login.
+
+Gestão Simples de Eventos:
+Crie, gerencie inscrições e monitore eventos de forma fácil e intuitiva, com dados armazenados de maneira segura.
+
+Interface Amigável:
+Mantendo uma interface moderna e responsiva, facilitamos o acesso e a navegação, inclusive agora com recursos de login.
+
+Segurança e Desempenho:
+Priorizamos segurança e desempenho, utilizando recursos avançados do DotNet 6 e práticas robustas de autenticação para garantir a proteção dos dados.
+
+Banco de Dados Integrado:
+Armazene e gerencie dados de eventos de forma eficiente com nosso sistema integrado de banco de dados.
+
+Login Seguro:
+Introduzimos um sistema de login seguro para organizadores e participantes, garantindo uma experiência personalizada e protegida.
+
+Personalização Flexível:
+Adapte eventos, formulários e até mesmo a autenticação conforme necessário, mantendo a flexibilidade essencial para suas necessidades específicas.
+
+Explore este projeto aprimorado e descubra como ele simplifica a organização de eventos, agora com a segurança e a personalização proporcionadas por recursos avançados de Banco de Dados e Login. Aproveite a eficiência oferecida por Angular e DotNet 6 em uma solução completa.
+
+
+
+
+
 ![WhatsApp Image 2023-12-26 at 20 37 13](https://github.com/Bluizpro/ProEventos.API/assets/96271091/2b16b0ba-ec8c-4d72-9ce5-6338a50e3f6d)
 Nessa tela podemos observar que ao entra no site ou sistema tem dois botoes um de clicar para cadastra e o outro para entra!
 ![WhatsApp Image 2023-12-26 at 20 37 38](https://github.com/Bluizpro/ProEventos.API/assets/96271091/6fac004f-ed9a-4269-9cb5-9f6ad308d92d)
