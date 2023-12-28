@@ -1,6 +1,5 @@
-back/src/WhatsApp Image 2023-12-26 at 20.37.13.jpeg
-
-
+![WhatsApp Image 2023-12-26 at 20 37 13](https://github.com/Bluizpro/ProEventos.API/assets/96271091/2b16b0ba-ec8c-4d72-9ce5-6338a50e3f6d)
+Nessa tela podemos observar que ao entra no site ou sistema tem dois botoes um de clicar para cadastra e o outro para entra!
 ![WhatsApp Image 2023-12-26 at 20 37 38](https://github.com/Bluizpro/ProEventos.API/assets/96271091/6fac004f-ed9a-4269-9cb5-9f6ad308d92d)
 nessa tela o usuario poderar cadastrar e criar um login
 ![WhatsApp Image 2023-12-26 at 20 38 02](https://github.com/Bluizpro/ProEventos.API/assets/96271091/01cd5fb6-15db-4488-ba8e-578642087d1b)
